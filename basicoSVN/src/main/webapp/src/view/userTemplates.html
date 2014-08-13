@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type='text/template' id='user'>
+    <div class='form-group'>
+        <form role='form' id='userForm'>
+ 
+            <div class='form-group' >
+                <label for='firstName'>Nombres</label>
+                <input type='text' class='form-control' id='firstName' name='firstName' placeholder='Enter value' value='<%= user.get('firstName') %>'/>	
+            </div>
+ 
+            <div class='form-group' >
+                <label for='lastName'>Apellidos</label>
+                <input type='text' class='form-control' id='lastName' name='lastName' placeholder='Enter value' value='<%= user.get('lastName') %>'/>	
+            </div>
+   
+            <div class="form-group">
+                <label for="birthDate">Fecha de nacimiento</label>
+                <input type='date' id='datePicker' name='datePicker' format="dd/mm/yyyy" value='<%= user.get('birthDate') %>'   />
+            </div>
+    
+            <div class="form-group">
+            <a onclick="Backbone.trigger('user-save'); return false" >Guardar</a> |
+            <a onclick="Backbone.trigger('user-cancel'); return false" >Cancelar</a> |
+                </div>
+
+                <div class="form-group">
+            <label id='resultado' name='resultado'></label>
+                </div>
+
+        </form>
+    </div>
+</script>
+    
+    </head>
+</html>
