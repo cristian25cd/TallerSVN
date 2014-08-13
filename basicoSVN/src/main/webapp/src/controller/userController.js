@@ -20,12 +20,11 @@
         save:function() { 
             var model = $('#userForm').serializeObject();
             var elemento=document.querySelector('#resultado');
-            var texto ='El usuario '+model.firstName+' '+model.lastName+' nació el '+model.datePicker+'.';
-            elemento.innerHTML=texto;
-        
+            var texto ='El usuario '+model.firstName+' '+model.lastName+' nació el '+model.datePicker+".";
+            elemento.innerHTML=texto.replace(/a/g, 'x');
         },
         cancel: function(){
-            alert('Cancel');
+            alert(random());
         },
         _renderEdit: function() {
             var self = this;
